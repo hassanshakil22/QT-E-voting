@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 #include "login.h"
-#include "signwind.h"
+#include "signUp.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
