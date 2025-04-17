@@ -2,7 +2,8 @@
 #include <QDate>
 QSqlDatabase Database::connectDB() {
     QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE");
-    db.setDatabaseName("C:\\Users\\hhhh\\BCIT 2nd SEMESTER\\OOPS\\E-voting app\\qt Project\\database\\users.db");  // Path to your SQLite database
+    db.setDatabaseName("C:/Users/Adnan/Desktop/work/QT-E-voting/database/users.db");
+      // Path to your SQLite database
 
     if (!db.open()) {
         qDebug() << "Error: Could not connect to database!";

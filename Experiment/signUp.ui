@@ -6,213 +6,278 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1302</width>
-    <height>550</height>
+    <width>661</width>
+    <height>538</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>E-Voting SignUp</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QDialog {
-    background-color: #f0f0f0; /* Changed to a solid background color */
+   <string notr="true">/* Main Container */
+QWidget {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 20px;
 }
 
-/* Central container with glass morphism effect */
-#centralwidget {
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 30px;
-    margin: 50px;
+/* Title */
+QLabel#title_label {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a3e8c;
+    margin-bottom: 25px;
 }
 
-/* Title label */
-#welcome_label {
-    font: bold 28px &quot;Segoe UI&quot;, Arial;
-    color: black; /* Changed to black */
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    qproperty-alignment: 'AlignCenter';
-    margin-bottom: 30px;
+/* Section Headers (Username, Password, etc.) */
+QLabel.section_header {
+    font-size: 14px;
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 5px;
 }
 
-/* Form labels */
-QLabel {
-    font: bold 16px &quot;Segoe UI&quot;;
-    color: black; /* Changed to black */
-    margin-bottom: 8px;
-}
-
-/* Input fields with modern styling */
-QLineEdit {
-    background: rgba(255, 255, 255, 0.25);
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 8px;
-    padding: 12px;
-    color: black; /* Changed to black */
-    font-size: 15px;
+/* Input Fields */
+QLineEdit, QDateEdit {
+    background: white;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 14px;
     margin-bottom: 15px;
-    selection-background-color: #4facfe;
+    min-width: 250px;
 }
 
-QLineEdit:focus {
-    border-color: rgba(79, 172, 254, 0.8);
-    background: rgba(255, 255, 255, 0.3);
+/* Input Field Placeholder Text */
+QLineEdit::placeholder {
+    color: #adb5bd;
+    font-style: italic;
 }
 
-/* Buttons with gradient and animation */
-QPushButton {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                              stop:0 #4facfe, stop:1 #00f2fe);
+/* Register Button */
+QPushButton#register_btn {
+    background-color: #1a73e8;
     color: white;
-    font: bold 16px &quot;Segoe UI&quot;;
-    border-radius: 8px;
-    padding: 14px 24px;
     border: none;
-    min-width: 120px;
+    border-radius: 6px;
+    padding: 12px 0;
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+QPushButton#register_btn:hover {
+    background-color: #1765cc;
+}
+
+/* Horizontal Line */
+QFrame#line {
+    border: 1px solid #e9ecef;
+    margin: 15px 0;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <property name="rightMargin">
+    <number>8</number>
+   </property>
+   <item>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <property name="spacing">
+      <number>0</number>
+     </property>
+     <property name="leftMargin">
+      <number>10</number>
+     </property>
+     <property name="topMargin">
+      <number>20</number>
+     </property>
+     <property name="rightMargin">
+      <number>60</number>
+     </property>
+     <property name="bottomMargin">
+      <number>20</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="styleSheet">
+        <string notr="true">
+    font-size: 20px;
+    font-weight: bold;
+    color: #1a3e8c;  /* Navy blue */
+    margin-bottom: 20px;
+</string>
+       </property>
+       <property name="text">
+        <string>Sign Up To  Participate</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+       <property name="margin">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="styleSheet">
+        <string notr="true"> font-size: 13px;
+    font-weight: bold;
+    color: #1a3e8c;  /* Navy blue */
+    padding: 10px;</string>
+       </property>
+       <property name="text">
+        <string>Username</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="name_eidt">
+       <property name="styleSheet">
+        <string notr="true"/>
+       </property>
+       <property name="placeholderText">
+        <string>Enter your username</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="styleSheet">
+        <string notr="true"> font-size: 13px;
+    font-weight: bold;
+    color: #1a3e8c;  /* Navy blue */
+    padding: 10px;</string>
+       </property>
+       <property name="text">
+        <string>Password</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="pass_edit">
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Password must contain letters and numbers</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="styleSheet">
+        <string notr="true"> font-size: 13px;
+    font-weight: bold;
+    color: #1a3e8c;  /* Navy blue */
+    padding: 10px;</string>
+       </property>
+       <property name="text">
+        <string>Cnic Number</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="cnicedit">
+       <property name="styleSheet">
+        <string notr="true"> background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 8px 0;
+    min-width: 250px;</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::EchoMode::Normal</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Without Dashes</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="styleSheet">
+        <string notr="true"> font-size: 13px;
+    font-weight: bold;
+    color: #1a3e8c;  /* Navy blue */
+    padding: 10px;</string>
+       </property>
+       <property name="text">
+        <string>Date Of Birth</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QDateEdit" name="dateEdit">
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+         <pointsize>-1</pointsize>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QDateEdit {
+    color: #000000;  /* Black text */
+    background-color: #ffffff;  /* White background */
+}</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QWidget" name="widget" native="true">
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <property name="leftMargin">
+         <number>80</number>
+        </property>
+        <property name="topMargin">
+         <number>12</number>
+        </property>
+        <property name="rightMargin">
+         <number>80</number>
+        </property>
+        <item>
+         <widget class="QPushButton" name="createacc_btn">
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>11</pointsize>
+            <italic>false</italic>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
+    background-color: #1a3e8c;  /* Navy blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
 }
 
 QPushButton:hover {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                              stop:0 #00f2fe, stop:1 #4facfe);
-}
-
-/* Login container */
-#login_container {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    padding: 30px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-/* Logo styling */
-#logo_label {
-    qproperty-alignment: 'AlignCenter';
-    margin-bottom: 20px;
-    qproperty-pixmap: url(:/icons/app_logo.png);
-}
-
-QDateEdit {
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 6px;
-    color: black; /* Changed to black */
-    font: 15px &quot;Segoe UI&quot;;
-    padding: 8px 12px;
-}
-
-QDateEdit::drop-down {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 0 4px 4px 0;
-}
-</string>
-  </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="6" column="2">
-    <widget class="QPushButton" name="createacc_btn">
-     <property name="font">
-      <font>
-       <family>Segoe UI</family>
-       <pointsize>-1</pointsize>
-       <italic>false</italic>
-       <bold>true</bold>
-      </font>
-     </property>
-     <property name="text">
-      <string>Register</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>Password</string>
-     </property>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="3">
-    <widget class="QLabel" name="label_6">
-     <property name="text">
-      <string>Sign Up To  Participate</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
-     <property name="margin">
-      <number>0</number>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label">
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_4">
-     <property name="text">
-      <string>Date Of Birth</string>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="2">
-    <widget class="QLineEdit" name="pass_edit">
-     <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Password</enum>
-     </property>
-     <property name="placeholderText">
-      <string>Password must contain letters and numbers</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="2">
-    <widget class="QLineEdit" name="cnicedit">
-     <property name="echoMode">
-      <enum>QLineEdit::EchoMode::Normal</enum>
-     </property>
-     <property name="placeholderText">
-      <string>Without Dashes</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Cnic Number</string>
-     </property>
-    </widget>
-   </item>
-   <item row="5" column="2">
-    <widget class="QDateEdit" name="dateEdit">
-     <property name="font">
-      <font>
-       <family>Segoe UI</family>
-       <pointsize>-1</pointsize>
-       <italic>false</italic>
-       <bold>false</bold>
-      </font>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="2">
-    <widget class="QLineEdit" name="name_eidt">
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="placeholderText">
-      <string>Enter your username</string>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QLabel" name="label_2">
-     <property name="text">
-      <string>Username</string>
-     </property>
-    </widget>
+    background-color: #0d2b5e;  /* Darker blue */
+}</string>
+          </property>
+          <property name="text">
+           <string>Register</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>

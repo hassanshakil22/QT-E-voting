@@ -27,16 +27,23 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QWidget *verticalLayoutWidget;
-    QVBoxLayout *verticalLayout_2;
+    QHBoxLayout *horizontalLayout_2;
+    QLabel *label_3;
+    QVBoxLayout *verticalLayout;
+    QWidget *widget_box_header;
+    QLabel *label_4;
     QLabel *log_label;
+    QWidget *widget_2;
+    QVBoxLayout *verticalLayout_3;
     QLabel *label;
     QLineEdit *cnic_field;
     QLabel *label_2;
     QLineEdit *pass_field;
+    QWidget *widget;
     QHBoxLayout *horizontalLayout;
-    QPushButton *signup_btn;
     QPushButton *login_btn;
+    QPushButton *signup_btn;
+    QWidget *widget_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -44,109 +51,105 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1292, 563);
+        MainWindow->resize(656, 488);
         MainWindow->setMinimumSize(QSize(0, 324));
-        MainWindow->setStyleSheet(QString::fromUtf8("QLineEdit:error {\n"
-"    border: 2px solid #ff4444;\n"
-"    background-color: #ffeeee;\n"
+        MainWindow->setStyleSheet(QString::fromUtf8("QWidget {\n"
+"    background-color: #f5f5f5;\n"
+"}\n"
+"\n"
+"/* Dark Mode Example */\n"
+"QWidget {\n"
+"    background-color: #2d3748;\n"
+"    color: white;  /* Text color */\n"
+"}\n"
+"\n"
+"QLineEdit, QPushButton {\n"
+"    background-color: white;  /* Input fields/buttons stand out */\n"
+"    color: #333333;\n"
+"}\n"
+"/* Main Window */\n"
+"QWidget {\n"
+"    background-color: #f5f5f5;  /* Light gray */\n"
+"    font-family: 'Segoe UI';\n"
+"}\n"
+"\n"
+"/* Title */\n"
+"#log_label {\n"
+"    font-size: 20px;\n"
+"    font-weight: bold;\n"
+"    color: #1a3e8c;  /* Navy blue */\n"
+"    padding: 10px;\n"
+"}\n"
+"\n"
+"/* Input Fields */\n"
+"QLineEdit {\n"
+"    background: white;\n"
+"    border: 1px solid #ddd;\n"
+"    border-radius: 5px;\n"
+"    padding: 8px;\n"
+"    margin: 0px 0;\n"
+"}\n"
+"\n"
+"/* Buttons */\n"
+"QPushButton {\n"
+"    background-color: #1a3e8c;  /* Navy blue */\n"
+"    color: white;\n"
+"    border: none;\n"
+"    border-radius: 5px;\n"
+"    padding: 10px;\n"
+"    margin: 10px 0;\n"
+"}\n"
+"\n"
+"QPushButton:ho"
+                        "ver {\n"
+"    background-color: #0d2b5e;  /* Darker blue */\n"
 "}\n"
 "QMessageBox {\n"
-"    font: 14px \"Segoe UI\";\n"
-"}\n"
-"\n"
-"QMessageBox QLabel#qt_msgbox_label {\n"
-"    min-width: 300px;\n"
-"}\n"
-"QMainWindow {\n"
-"    background-color: #f0f0f0; /* Changed to a solid background color */\n"
-"}\n"
-"\n"
-"/* Central container with glass morphism effect */\n"
-"#centralwidget {\n"
-"    background: rgba(255, 255, 255, 0.15);\n"
-"    border-radius: 15px;\n"
-"    border: 1px solid rgba(255, 255, 255, 0.2);\n"
-"    padding: 30px;\n"
-"    margin: 50px;\n"
-"}\n"
-"\n"
-"/* Title label */\n"
-"#welcome_label {\n"
-"    font: bold 28px \"Segoe UI\", Arial;\n"
-"    color: black; /* Changed to black */\n"
-"    letter-spacing: 2px;\n"
-"    text-transform: uppercase;\n"
-"    qproperty-alignment: 'AlignCenter';\n"
-"    margin-bottom: 30px;\n"
-"}\n"
-"\n"
-"/* Form labels */\n"
-"QLabel {\n"
-"    font: bold 16px \"Segoe UI\";\n"
-"    color: black; /* Changed to black */\n"
-"    margin-bottom: 2px;\n"
-""
-                        "}\n"
-"\n"
-"/* Input fields with modern styling */\n"
-"QLineEdit {\n"
-"    background: rgba(255, 255, 255, 0.25);\n"
-"    border: 3px solid rgba(255, 255, 255, 0.4);\n"
-"    border-radius: 12px;\n"
-"    padding: 12px;\n"
-"    color: black; /* Changed to black */\n"
-"    font-size: 15px;\n"
-"    margin-bottom: 2px;\n"
-"    selection-background-color: #4facfe;\n"
-"}\n"
-"\n"
-"QLineEdit:focus {\n"
-"    border-color: rgba(79, 172, 254, 0.8);\n"
-"    background: rgba(255, 255, 255, 0.3);\n"
-"}\n"
-"\n"
-"/* Buttons with gradient and animation */\n"
-"QPushButton {\n"
-"    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,\n"
-"                              stop:0 #4facfe, stop:1 #00f2fe);\n"
+"    background-color: rgb(255, 255, 255);  /* Dark gray */\n"
 "    color: white;\n"
-"    font: bold 16px \"Segoe UI\";\n"
-"    border-radius: 8px;\n"
-"    padding: 14px 24px;\n"
-"    border: none;\n"
-"    min-width: 120px;\n"
 "}\n"
 "\n"
-"QPushButton:hover {\n"
-"    background: qlineargradient(x1:0, y1:0, x2:1, y2:0,\n"
-"                              stop:0 #00f2fe, stop:1 #4facfe);\n"
+"QMessageBox QLabel {\n"
+"    font-size: 14pt;\n"
+"    font-weight: bold;\n"
+"    color: rgb(26, 62, 140);\n"
 "}\n"
 "\n"
-""
-                        "/* Login container */\n"
-"#login_container {\n"
-"    background: rgba(255, 255, 255, 0.1);\n"
-"    border-radius: 15px;\n"
-"    padding: 30px;\n"
-"    border: 1px solid rgba(255, 255, 255, 0.15);\n"
+"QMessageBox QPushButton {\n"
+"    background-color: rgb(26, 62, 140) /* Green buttons */\n"
+"    color: rgb(255, 255, 255);\n"
+"    padding: 6px 12px;\n"
+"    border-radius: 5px;\n"
 "}\n"
 "\n"
-"/* Logo styling */\n"
-"#logo_label {\n"
-"    qproperty-alignment: 'AlignCenter';\n"
-"    margin-bottom: 15px;\n"
-"    qproperty-pixmap: url(:/icons/app_logo.png);\n"
-"}\n"
-""));
+"QMessageBox QPushButton:hover {\n"
+"    background-color: rgb(255, 255, 255);\n"
+"}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        verticalLayoutWidget = new QWidget(centralwidget);
-        verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(250, 100, 691, 321));
-        verticalLayout_2 = new QVBoxLayout(verticalLayoutWidget);
-        verticalLayout_2->setObjectName("verticalLayout_2");
-        verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        log_label = new QLabel(verticalLayoutWidget);
+        horizontalLayout_2 = new QHBoxLayout(centralwidget);
+        horizontalLayout_2->setObjectName("horizontalLayout_2");
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName("label_3");
+
+        horizontalLayout_2->addWidget(label_3);
+
+        verticalLayout = new QVBoxLayout();
+        verticalLayout->setObjectName("verticalLayout");
+        verticalLayout->setContentsMargins(30, 40, 30, 40);
+        widget_box_header = new QWidget(centralwidget);
+        widget_box_header->setObjectName("widget_box_header");
+        widget_box_header->setMinimumSize(QSize(80, 80));
+        widget_box_header->setSizeIncrement(QSize(200, 100));
+        widget_box_header->setBaseSize(QSize(200, 100));
+        label_4 = new QLabel(widget_box_header);
+        label_4->setObjectName("label_4");
+        label_4->setGeometry(QRect(240, 0, 101, 81));
+        label_4->setPixmap(QPixmap(QString::fromUtf8(":/New folder/logo.png")));
+
+        verticalLayout->addWidget(widget_box_header);
+
+        log_label = new QLabel(centralwidget);
         log_label->setObjectName("log_label");
         QFont font;
         font.setFamilies({QString::fromUtf8("Segoe UI")});
@@ -156,56 +159,85 @@ public:
         log_label->setStyleSheet(QString::fromUtf8(""));
         log_label->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
-        verticalLayout_2->addWidget(log_label);
+        verticalLayout->addWidget(log_label);
 
-        label = new QLabel(verticalLayoutWidget);
+        widget_2 = new QWidget(centralwidget);
+        widget_2->setObjectName("widget_2");
+        verticalLayout_3 = new QVBoxLayout(widget_2);
+        verticalLayout_3->setObjectName("verticalLayout_3");
+        verticalLayout_3->setContentsMargins(70, 2, 70, 0);
+        label = new QLabel(widget_2);
         label->setObjectName("label");
+        label->setStyleSheet(QString::fromUtf8("  font-size: 13px;\n"
+"    font-weight: bold;\n"
+"    color: #1a3e8c;  /* Navy blue */\n"
+"    padding: 10px;"));
 
-        verticalLayout_2->addWidget(label);
+        verticalLayout_3->addWidget(label);
 
-        cnic_field = new QLineEdit(verticalLayoutWidget);
+        cnic_field = new QLineEdit(widget_2);
         cnic_field->setObjectName("cnic_field");
 
-        verticalLayout_2->addWidget(cnic_field);
+        verticalLayout_3->addWidget(cnic_field);
 
-        label_2 = new QLabel(verticalLayoutWidget);
+        label_2 = new QLabel(widget_2);
         label_2->setObjectName("label_2");
-        label_2->setStyleSheet(QString::fromUtf8("QMainWindow {\n"
-"    background-image: url(:/resources/);\n"
-"    background-position: center;\n"
-"    background-repeat: no-repeat;\n"
-"}"));
+        label_2->setStyleSheet(QString::fromUtf8("  font-size: 13px;\n"
+"    font-weight: bold;\n"
+"    color: #1a3e8c;  /* Navy blue */\n"
+"    padding: 10px;"));
 
-        verticalLayout_2->addWidget(label_2);
+        verticalLayout_3->addWidget(label_2);
 
-        pass_field = new QLineEdit(verticalLayoutWidget);
+        pass_field = new QLineEdit(widget_2);
         pass_field->setObjectName("pass_field");
         pass_field->setEchoMode(QLineEdit::EchoMode::Password);
 
-        verticalLayout_2->addWidget(pass_field);
+        verticalLayout_3->addWidget(pass_field);
 
-        horizontalLayout = new QHBoxLayout();
+
+        verticalLayout->addWidget(widget_2);
+
+        widget = new QWidget(centralwidget);
+        widget->setObjectName("widget");
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(14);
         horizontalLayout->setObjectName("horizontalLayout");
-        signup_btn = new QPushButton(verticalLayoutWidget);
-        signup_btn->setObjectName("signup_btn");
-
-        horizontalLayout->addWidget(signup_btn);
-
-        login_btn = new QPushButton(verticalLayoutWidget);
+        horizontalLayout->setContentsMargins(76, 4, 69, 0);
+        login_btn = new QPushButton(widget);
         login_btn->setObjectName("login_btn");
         login_btn->setEnabled(true);
-        login_btn->setMinimumSize(QSize(168, 0));
+        login_btn->setMinimumSize(QSize(0, 0));
         login_btn->setBaseSize(QSize(0, 0));
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Segoe UI")});
+        font1.setPointSize(11);
+        font1.setBold(true);
+        login_btn->setFont(font1);
 
         horizontalLayout->addWidget(login_btn);
 
+        signup_btn = new QPushButton(widget);
+        signup_btn->setObjectName("signup_btn");
+        signup_btn->setFont(font1);
 
-        verticalLayout_2->addLayout(horizontalLayout);
+        horizontalLayout->addWidget(signup_btn);
+
+
+        verticalLayout->addWidget(widget);
+
+
+        horizontalLayout_2->addLayout(verticalLayout);
+
+        widget_3 = new QWidget(centralwidget);
+        widget_3->setObjectName("widget_3");
+
+        horizontalLayout_2->addWidget(widget_3);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1292, 26));
+        menubar->setGeometry(QRect(0, 0, 656, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -219,14 +251,16 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "E-Voting Login Page", nullptr));
+        label_3->setText(QString());
+        label_4->setText(QString());
         log_label->setText(QCoreApplication::translate("MainWindow", "Welcome to E-Voting System", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "CNIC", nullptr));
         cnic_field->setText(QString());
         cnic_field->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter Your Cnic without dashes ", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "Password", nullptr));
         pass_field->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter password here", nullptr));
-        signup_btn->setText(QCoreApplication::translate("MainWindow", "Register", nullptr));
         login_btn->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
+        signup_btn->setText(QCoreApplication::translate("MainWindow", "Register", nullptr));
     } // retranslateUi
 
 };
