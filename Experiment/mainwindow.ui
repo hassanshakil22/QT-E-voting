@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>656</width>
-    <height>488</height>
+    <width>747</width>
+    <height>582</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -95,13 +95,6 @@ QMessageBox QPushButton:hover {
   <widget class="QWidget" name="centralwidget">
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
-     <widget class="QLabel" name="label_3">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="leftMargin">
        <number>30</number>
@@ -116,41 +109,16 @@ QMessageBox QPushButton:hover {
        <number>40</number>
       </property>
       <item>
-       <widget class="QWidget" name="widget_box_header" native="true">
-        <property name="minimumSize">
-         <size>
-          <width>80</width>
-          <height>80</height>
-         </size>
+       <widget class="QLabel" name="label_4">
+        <property name="text">
+         <string/>
         </property>
-        <property name="sizeIncrement">
-         <size>
-          <width>200</width>
-          <height>100</height>
-         </size>
+        <property name="pixmap">
+         <pixmap resource="image.qrc">:/New folder/logo.png</pixmap>
         </property>
-        <property name="baseSize">
-         <size>
-          <width>200</width>
-          <height>100</height>
-         </size>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
         </property>
-        <widget class="QLabel" name="label_4">
-         <property name="geometry">
-          <rect>
-           <x>240</x>
-           <y>0</y>
-           <width>101</width>
-           <height>81</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="pixmap">
-          <pixmap resource="image.qrc">:/New folder/logo.png</pixmap>
-         </property>
-        </widget>
        </widget>
       </item>
       <item>
@@ -304,9 +272,6 @@ QMessageBox QPushButton:hover {
       </item>
      </layout>
     </item>
-    <item>
-     <widget class="QWidget" name="widget_3" native="true"/>
-    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -314,7 +279,7 @@ QMessageBox QPushButton:hover {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>656</width>
+     <width>747</width>
      <height>26</height>
     </rect>
    </property>

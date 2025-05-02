@@ -1,10 +1,12 @@
-#include "mainwindow.h"
+#include "voter_login.h"
 #include <QApplication>
 #include <QDebug>
 #include "database.h"
 #include <QMessageBox>
 #include <QFile>
 #include <QStyleFactory>
+#include "mainpage.h"
+#include "ui_mainpage.h"
 
 int main(int argc, char *argv[])
 {
@@ -42,7 +44,7 @@ int main(int argc, char *argv[])
         "}"
         );
 
-    MainWindow w;
+    Mainpage w;
     w.show();
     return a.exec();
 }

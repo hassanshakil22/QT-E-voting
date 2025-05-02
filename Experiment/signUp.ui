@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>661</width>
-    <height>538</height>
+    <height>677</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,7 +16,7 @@
   <property name="styleSheet">
    <string notr="true">/* Main Container */
 QWidget {
-    background-color: #f8f9fa;
+ 	background-color : #f8f9f8 ;
     font-family: 'Segoe UI', sans-serif;
     padding: 20px;
 }

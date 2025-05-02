@@ -10,23 +10,35 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    After_voter_login.cpp \
+    add_candidate.cpp \
+    admin.cpp \
+    candidates_dashboard.cpp \
     database.cpp \
-    login.cpp \
     main.cpp \
-    mainwindow.cpp \
-    signUp.cpp
+    mainpage.cpp \
+    voter_login.cpp \
+    voter_signin.cpp
 
 HEADERS += \
+    After_voter_login.h \
+    add_candidate.h \
+    admin.h \
+    candidates_dashboard.h \
     database.h \
-    login.h \
-    mainwindow.h \
-    signUp.h
+    mainpage.h \
+    voter_login.h \
+    voter_signin.h
 
 FORMS += \
+    After_voter_login.ui \
     Sign_win.ui \
-    login.ui \
-    mainwindow.ui \
-    signUp.ui
+    add_candidate.ui \
+    admin.ui \
+    candidates_dashboard.ui \
+    mainpage.ui \
+    voter_login.ui \
+    voter_signin.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

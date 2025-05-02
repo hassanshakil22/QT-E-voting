@@ -27,11 +27,16 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout_2;
-    QLabel *label_3;
+    QVBoxLayout *verticalLayout_2;
+    QWidget *widget_3;
     QVBoxLayout *verticalLayout;
     QWidget *widget_box_header;
+    QHBoxLayout *horizontalLayout_3;
     QLabel *label_4;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
+    QWidget *widget_4;
+    QHBoxLayout *horizontalLayout_4;
     QLabel *log_label;
     QWidget *widget_2;
     QVBoxLayout *verticalLayout_3;
@@ -43,7 +48,7 @@ public:
     QHBoxLayout *horizontalLayout;
     QPushButton *login_btn;
     QPushButton *signup_btn;
-    QWidget *widget_3;
+    QLabel *label_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -51,7 +56,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(656, 488);
+        MainWindow->resize(689, 513);
         MainWindow->setMinimumSize(QSize(0, 324));
         MainWindow->setStyleSheet(QString::fromUtf8("QWidget {\n"
 "    background-color: #f5f5f5;\n"
@@ -127,12 +132,12 @@ public:
 "}"));
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout_2 = new QHBoxLayout(centralwidget);
-        horizontalLayout_2->setObjectName("horizontalLayout_2");
-        label_3 = new QLabel(centralwidget);
-        label_3->setObjectName("label_3");
+        verticalLayout_2 = new QVBoxLayout(centralwidget);
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        widget_3 = new QWidget(centralwidget);
+        widget_3->setObjectName("widget_3");
 
-        horizontalLayout_2->addWidget(label_3);
+        verticalLayout_2->addWidget(widget_3);
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName("verticalLayout");
@@ -142,20 +147,57 @@ public:
         widget_box_header->setMinimumSize(QSize(80, 80));
         widget_box_header->setSizeIncrement(QSize(200, 100));
         widget_box_header->setBaseSize(QSize(200, 100));
+        horizontalLayout_3 = new QHBoxLayout(widget_box_header);
+        horizontalLayout_3->setSpacing(19);
+        horizontalLayout_3->setObjectName("horizontalLayout_3");
+        horizontalLayout_3->setContentsMargins(213, 0, 70, -1);
         label_4 = new QLabel(widget_box_header);
         label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(240, 0, 101, 81));
+        label_4->setMinimumSize(QSize(80, 80));
         label_4->setPixmap(QPixmap(QString::fromUtf8(":/New folder/logo.png")));
+        label_4->setAlignment(Qt::AlignmentFlag::AlignCenter);
+
+        horizontalLayout_3->addWidget(label_4);
+
+        pushButton = new QPushButton(widget_box_header);
+        pushButton->setObjectName("pushButton");
+        pushButton->setMinimumSize(QSize(70, 0));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("Segoe UI")});
+        font.setBold(true);
+        pushButton->setFont(font);
+
+        horizontalLayout_3->addWidget(pushButton);
+
+        pushButton_2 = new QPushButton(widget_box_header);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setFont(font);
+
+        horizontalLayout_3->addWidget(pushButton_2);
+
+        widget_4 = new QWidget(widget_box_header);
+        widget_4->setObjectName("widget_4");
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Segoe UI")});
+        font1.setBold(false);
+        widget_4->setFont(font1);
+        horizontalLayout_4 = new QHBoxLayout(widget_4);
+        horizontalLayout_4->setSpacing(2);
+        horizontalLayout_4->setObjectName("horizontalLayout_4");
+        horizontalLayout_4->setContentsMargins(31, 10, 9, -1);
+
+        horizontalLayout_3->addWidget(widget_4);
+
 
         verticalLayout->addWidget(widget_box_header);
 
         log_label = new QLabel(centralwidget);
         log_label->setObjectName("log_label");
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Segoe UI")});
-        font.setBold(true);
-        font.setItalic(false);
-        log_label->setFont(font);
+        QFont font2;
+        font2.setFamilies({QString::fromUtf8("Segoe UI")});
+        font2.setBold(true);
+        font2.setItalic(false);
+        log_label->setFont(font2);
         log_label->setStyleSheet(QString::fromUtf8(""));
         log_label->setAlignment(Qt::AlignmentFlag::AlignCenter);
 
@@ -163,6 +205,8 @@ public:
 
         widget_2 = new QWidget(centralwidget);
         widget_2->setObjectName("widget_2");
+        widget_2->setMinimumSize(QSize(30, 30));
+        widget_2->setSizeIncrement(QSize(0, 40));
         verticalLayout_3 = new QVBoxLayout(widget_2);
         verticalLayout_3->setObjectName("verticalLayout_3");
         verticalLayout_3->setContentsMargins(70, 2, 70, 0);
@@ -209,17 +253,17 @@ public:
         login_btn->setEnabled(true);
         login_btn->setMinimumSize(QSize(0, 0));
         login_btn->setBaseSize(QSize(0, 0));
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Segoe UI")});
-        font1.setPointSize(11);
-        font1.setBold(true);
-        login_btn->setFont(font1);
+        QFont font3;
+        font3.setFamilies({QString::fromUtf8("Segoe UI")});
+        font3.setPointSize(11);
+        font3.setBold(true);
+        login_btn->setFont(font3);
 
         horizontalLayout->addWidget(login_btn);
 
         signup_btn = new QPushButton(widget);
         signup_btn->setObjectName("signup_btn");
-        signup_btn->setFont(font1);
+        signup_btn->setFont(font3);
 
         horizontalLayout->addWidget(signup_btn);
 
@@ -227,17 +271,17 @@ public:
         verticalLayout->addWidget(widget);
 
 
-        horizontalLayout_2->addLayout(verticalLayout);
+        verticalLayout_2->addLayout(verticalLayout);
 
-        widget_3 = new QWidget(centralwidget);
-        widget_3->setObjectName("widget_3");
+        label_3 = new QLabel(centralwidget);
+        label_3->setObjectName("label_3");
 
-        horizontalLayout_2->addWidget(widget_3);
+        verticalLayout_2->addWidget(label_3);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 656, 26));
+        menubar->setGeometry(QRect(0, 0, 689, 22));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -251,8 +295,9 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "E-Voting Login Page", nullptr));
-        label_3->setText(QString());
         label_4->setText(QString());
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Admin", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Candidate", nullptr));
         log_label->setText(QCoreApplication::translate("MainWindow", "Welcome to E-Voting System", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "CNIC", nullptr));
         cnic_field->setText(QString());
@@ -261,6 +306,7 @@ public:
         pass_field->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter password here", nullptr));
         login_btn->setText(QCoreApplication::translate("MainWindow", "Login", nullptr));
         signup_btn->setText(QCoreApplication::translate("MainWindow", "Register", nullptr));
+        label_3->setText(QString());
     } // retranslateUi
 
 };

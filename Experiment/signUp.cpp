@@ -24,31 +24,32 @@ void signwind::on_createacc_btn_clicked()
     QString pass = ui->pass_edit->text();
     QString cnic = ui->cnicedit->text().remove('-'); // Remove dashes
     QDate date = ui->dateEdit->date();
+    // this->setStyleSheet(""); // Reset style sheet
 
     // Simple validation
     if(name.isEmpty() || pass.isEmpty() || cnic.isEmpty()) {
-        QMessageBox::warning(this, "Error", "All fields are required");
+        QMessageBox::warning(this, "Error", "All fields are required",QMessageBox::Ok);
         return;
     }
 
     int age = QDate::currentDate().year() - date.year();
     if(age < 18) {
-        QMessageBox::warning(this, "Error", "You must be at least 18 years old");
+        QMessageBox::warning(this, "Error", "You must be at least 18 years old",QMessageBox::Ok);
         return;
     }
 
     if(cnic.length() != 13) {
-        QMessageBox::warning(this, "Error", "CNIC must be 13 digits");
+        QMessageBox::warning(this, "Error", "CNIC must be 13 digits" ,QMessageBox::Ok);
         return;
     }
 
     // Now try inserting the user
     if (Database::insertUser(name, pass,cnic,date)) {
-        QMessageBox::information(this, "Success", "Account created successfully!");
+        QMessageBox::information(this, "Success", "Account created successfully!" ,QMessageBox::Ok);
         hide();
         againlog = new MainWindow(this);
         againlog->show();
     } else {
-        QMessageBox::critical(this, "Error", "Username already exists or could not create account.");
+        QMessageBox::critical(this, "Error", "Username already exists or could not create account." ,QMessageBox::Ok);
     }
 }
