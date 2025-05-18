@@ -9,9 +9,9 @@ A C++ voting application built with **Qt** and **SQLite**, developed by a team o
 - SQLite database for storage  
 
 ### Team  
-- [Your Name]  
+- [Hassan Shakil] [leader]  
 - [Kashan Baig](https://github.com/Kashan-Baig)  
-- [Third Member] *(GitHub to be added)*  
+- [Saad Ali Siddiqui] *(GitHub to be added)*  
 
 ### Requirements  
 - Qt 5+  
